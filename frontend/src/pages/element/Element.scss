@@ -1,0 +1,36 @@
+.myelement-general {
+  height: 100vh;
+}
+
+#addButton {
+  width: 10%;
+}
+.modal-form-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .myelementcomponent {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.modal-form-element {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.cardBody-element {
+  width: 20em;
+  height: 7em;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    max-width: 15em;
+  }
+}
