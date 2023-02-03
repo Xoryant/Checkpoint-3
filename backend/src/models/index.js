@@ -1,6 +1,8 @@
 require("dotenv").config();
 
+const fs = require("fs");
 const mysql = require("mysql2/promise");
+const path = require("path");
 
 // create a connection pool to the database
 
@@ -27,12 +29,18 @@ pool.getConnection().catch(() => {
 
 // declare and fill models: that's where you should register your own managers
 
-const models = {};
+const models = fs
+  .readdirSync(__dirname)
+  .filter((file) => file !== "AbstractManager.js" && file !== "index.js")
+  .reduce((acc, file) => {
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    const Manager = require(path.join(__dirname, file));
 
-const ItemManager = require("./ItemManager");
+    const managerInstance = new Manager();
+    managerInstance.setConnection(pool);
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
+    return { ...acc, [managerInstance.table]: managerInstance };
+  }, {});
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model

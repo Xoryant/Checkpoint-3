@@ -1,0 +1,56 @@
+.creation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  .formsCreationItems {
+    button {
+      width: 5em;
+      border-radius: 6px;
+      color: black;
+      border: solid 1px rgb(220, 20, 60);
+      background-color: rgb(220, 20, 60);
+      margin-top: 1em;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(16, 16, 16, 0.814);
+    height: 50vh;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 6em;
+    margin-bottom: 1.8em;
+  }
+
+  input {
+    font-size: 1rem;
+    animation: pulsate 1.5s infinite alternate;
+    border: 0.2rem solid rgb(255, 255, 255);
+    padding: 0.4em;
+    box-shadow: 0 0 0.2rem rgb(235, 235, 235), 0 0 0.2rem rgb(32, 32, 32),
+      0 0 2rem rgb(255, 255, 255), 0 0 0.8rem rgb(0, 0, 0),
+      0 0 2.8rem rgb(0, 0, 0), inset 0 0 1.3rem rgb(0, 0, 0);
+  }
+  a {
+    color: rgb(220, 20, 60);
+  }
+  .registerlink {
+    color: white;
+  }
+  .container-login-1 {
+    display: flex;
+    flex-direction: column;
+    color: rgb(220, 20, 60);
+    font-size: 2em;
+    align-items: center;
+  }
+  .container-login-2 {
+    display: flex;
+    flex-direction: column;
+    color: rgb(220, 20, 60);
+    font-size: 2em;
+    align-items: center;
+  }
+}

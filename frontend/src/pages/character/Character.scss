@@ -1,0 +1,49 @@
+.mycharacterpage {
+  display: flex;
+  justify-content: center;
+  height: 200vh;
+  #addButton {
+    width: 10%;
+  }
+}
+
+.modal-form {
+  .mycharactercomponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
+  display: flex;
+  width: 100%;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.descCharacter {
+  color: white;
+  font-size: 3em;
+  width: 20em;
+}
+
+.nameCharacter {
+  color: white;
+  font-size: 3em;
+}
+
+.cardBody {
+  width: 20em;
+  height: 7em;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  img {
+    max-width: 5em;
+  }
+}
