@@ -2,18 +2,19 @@ import { Link } from "react-router-dom";
 import "./Element.scss";
 
 export default function ElementCard({
+  id,
   element_name: elementName,
   element_desc: elementDesc,
   element_image: elementImg,
+  card,
 }) {
   return (
     <div className="cardBody-element">
-      {elementName && <p className="elementName">{elementName}</p>}
-      {/* {elementDesc && <p className="elementDesc">{elementDesc}</p>} */}
+      {card && <p className="elementName">{elementName}</p>}
       {elementImg && (
-        <Link to={`/${elementName}`}>
+        <Link to={`/elementOpen/${id}`}>
           <img
-            className="elementImg"
+            className="nameElement"
             src={`${
               import.meta.env.VITE_BACKEND_URL
             }/public/assets/images/${elementImg}`}

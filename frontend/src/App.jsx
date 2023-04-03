@@ -10,9 +10,12 @@ import Weapon from "./pages/weapon/Weapon";
 import CreateElement from "./pages/creates/CreateElement";
 import Element from "./pages/element/Element";
 import Footer from "./pages/components/Footer";
+import AdminPage from "./pages/admin/AdminPage";
 import Map from "./pages/map/Map";
+import requireAdmin from "./pages/components/RequireAdmin";
 import CharacterOpen from "./pages/character/CharacterOpen";
 import WeaponOpen from "./pages/weapon/WeaponOpen";
+import ElementOpen from "./pages/element/ElementOpen";
 import { useCurrentUserContext } from "./pages/contexts/CurrentUserContext";
 
 // import WeaponInventory from "./pages/inventory/WeaponInventory";
@@ -26,6 +29,7 @@ function App() {
       {user.id && <Navbar />}
       <main>
         <Routes>
+          <Route exact path="/admin" component={requireAdmin(AdminPage)} />
           <Route exact path="/" element={<Home />} />
           {/* {user.id && (
             <Route exact path="/inventory" element={<WeaponInventory />} />
@@ -33,12 +37,15 @@ function App() {
           {user.id && user.admin && (
             <Route exact path="/createChara" element={<CreateChara />} />
           )}
-          {user.id && user.admin && (
+          {user.id && (
             <Route
               exact
               path="/characterOpen/:id"
               element={<CharacterOpen />}
             />
+          )}
+          {user.id && (
+            <Route exact path="/elementOpen/:id" element={<ElementOpen />} />
           )}
           {user.id && (
             <Route exact path="/characters" element={<Character />} />
@@ -50,6 +57,9 @@ function App() {
           {user.id && <Route exact path="/element" element={<Element />} />}
           {user.id && user.admin && (
             <Route exact path="/createElement" element={<CreateElement />} />
+          )}
+          {user.id && user.admin && (
+            <Route exact path="/adminPage" element={<AdminPage />} />
           )}
           <Route exact path="/map" element={<Map />} />
           {user.id && (

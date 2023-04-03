@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCurrentUserContext } from "@pages/contexts/CurrentUserContext";
 import axios from "axios";
-import Plus from "@assets/plussign.png";
 import ElementCard from "./ElementCard";
 
 export default function Character() {
@@ -30,11 +28,6 @@ export default function Character() {
               ? myElement.map((i) => <ElementCard {...i} />)
               : null}
           </div>
-          {user.admin && (
-            <Link to="/createElement">
-              <img src={Plus} alt="add-element" id="addButton" />
-            </Link>
-          )}
         </div>
       </div>
     </div>

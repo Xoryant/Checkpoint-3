@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useCurrentUserContext } from "@pages/contexts/CurrentUserContext";
 import axios from "axios";
-import Plus from "@assets/plussign.png";
 import WeaponCard from "./WeaponCard";
 import "./Weapon.scss";
 
@@ -31,11 +29,6 @@ export default function Weapon() {
               ? myWeapon.map((i) => <WeaponCard {...i} />)
               : null}
           </div>
-          {user.admin && (
-            <Link to="/createWeapon">
-              <img src={Plus} alt="add-weapon" id="addButton" />
-            </Link>
-          )}
         </div>
       </div>
     </div>
