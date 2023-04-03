@@ -3,7 +3,7 @@ import "./Weapon.scss";
 
 export default function ArmeCard({
   id,
-  weapon_name: weaponName,
+  weapon_name: armeName,
   weapon_desc: armeDesc,
   weapon_image: armeImage,
   card,
@@ -11,7 +11,7 @@ export default function ArmeCard({
   return (
     <div className="cardBody">
       {card && <p className="weaponDesc">{armeDesc}</p>}
-      {card && <p className="nameCharacter">{weaponName}</p>}
+      {card && <p className="nameWeapon">{armeName}</p>}
       {armeImage && (
         <Link to={`/weaponOpen/${id}`}>
           <img

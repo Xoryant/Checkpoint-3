@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import WeaponCard from "./WeaponCard";
-import "./Weapon.scss";
+import ElementCard from "./ElementCard";
+import "./Element.scss";
 
 export default function WeaponOpen() {
-  const [myWeapons, setMyWeapons] = useState();
+  const [myElement, setMyElement] = useState();
   const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/armes/${id}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/elemental/${id}`)
       .then(({ data }) => {
-        setMyWeapons(data);
+        setMyElement(data);
       })
       .catch((err) => {
         console.error(err);
@@ -22,10 +22,10 @@ export default function WeaponOpen() {
   return (
     <div className="weaponPage">
       <div className="weapon-card">
-        <h1>Weapon</h1>
+        <h1>Element</h1>
         <div className="modal-form">
           <div className="Weaponcomponent">
-            {myWeapons ? <WeaponCard {...myWeapons} card /> : null}
+            {myElement ? <ElementCard {...myElement} card /> : null}
           </div>
         </div>
       </div>

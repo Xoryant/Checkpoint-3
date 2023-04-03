@@ -31,11 +31,6 @@ export default function Character() {
               ? myCharacters.map((i) => <CharacterCard {...i} />)
               : null}
           </div>
-          {user.admin && (
-            <Link to="/createChara">
-              <img src={Plus} alt="add-chara" id="addButton" />
-            </Link>
-          )}
         </div>
       </div>
     </div>

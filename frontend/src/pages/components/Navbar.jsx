@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/genshin-logo.png";
+import { useCurrentUserContext } from "../contexts/CurrentUserContext";
 import "./Navbar.scss";
 
 export default function Navbar() {
+  const { user } = useCurrentUserContext();
+
   return (
     <div className="nav-global">
       <nav>
@@ -34,6 +37,13 @@ export default function Navbar() {
               Inventory
             </NavLink>
           </li>
+          {user.admin === 1 && (
+            <li>
+              <NavLink exact to="/adminPage">
+                Admin
+              </NavLink>
+            </li>
+          )}
         </ul>
       </nav>
     </div>
